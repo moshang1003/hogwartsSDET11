@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="7" hostname="DESKTOP-2P3JG1L" name="pytest" skipped="0" tests="14" time="0.462" timestamp="2020-02-29T15:03:14.598604"><testcase classname="unit.test_para" file="unit\test_para.py" line="8" name="test_para_int_param[100000000-1-100000000]" time="0.014"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="8" name="test_para_int_param[-10-2--5]" time="0.013"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="8" name="test_para_int_param[-10--2-5]" time="0.013"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="8" name="test_para_int_param[10-2-5]" time="0.013"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="8" name="test_para_int_param[10-5-2]" time="0.014"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="20" name="test_para_float_param[10.2-0.2-51]" time="0.010"><failure message="assert 50.99999999999999 == 51
+ +  where 50.99999999999999 = div(10.2, 0.2)">num1 = 10.2, num2 = 0.2, expect = 51
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (10, 3, 3.3),
+        (10.2, 0.2, 51),
+        (-10, 2.1, -4.76)
+    })
+    def test_para_float_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+E       assert 50.99999999999999 == 51
+E        +  where 50.99999999999999 = div(10.2, 0.2)
+
+unit\test_para.py:27: AssertionError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="20" name="test_para_float_param[-10-2.1--4.76]" time="0.004"><failure message="assert -4.761904761904762 == -4.76
+ +  where -4.761904761904762 = div(-10, 2.1)">num1 = -10, num2 = 2.1, expect = -4.76
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (10, 3, 3.3),
+        (10.2, 0.2, 51),
+        (-10, 2.1, -4.76)
+    })
+    def test_para_float_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+E       assert -4.761904761904762 == -4.76
+E        +  where -4.761904761904762 = div(-10, 2.1)
+
+unit\test_para.py:27: AssertionError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="20" name="test_para_float_param[10-3-3.3]" time="0.005"><failure message="assert 3.3333333333333335 == 3.3
+ +  where 3.3333333333333335 = div(10, 3)">num1 = 10, num2 = 3, expect = 3.3
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (10, 3, 3.3),
+        (10.2, 0.2, 51),
+        (-10, 2.1, -4.76)
+    })
+    def test_para_float_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+E       assert 3.3333333333333335 == 3.3
+E        +  where 3.3333333333333335 = div(10, 3)
+
+unit\test_para.py:27: AssertionError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="30" name="test_para_zero1_param[0-0-none]" time="0.002"><failure message="ZeroDivisionError: division by zero">num1 = 0, num2 = 0, expect = &apos;none&apos;
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (0, 3, 0),
+        (0, -1, 0),
+        (0,0,&apos;none&apos;),
+        (1,0,&apos;none&apos;)
+    })
+    def test_para_zero1_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+
+unit\test_para.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 0, b = 0
+
+    def div(a, b):
+        #todo:健壮性、异常处理
+&gt;       return a/b
+E       ZeroDivisionError: division by zero
+
+unit\div.py:4: ZeroDivisionError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="30" name="test_para_zero1_param[0-3-0]" time="0.004"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="30" name="test_para_zero1_param[0--1-0]" time="0.003"></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="30" name="test_para_zero1_param[1-0-none]" time="0.003"><failure message="ZeroDivisionError: division by zero">num1 = 1, num2 = 0, expect = &apos;none&apos;
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (0, 3, 0),
+        (0, -1, 0),
+        (0,0,&apos;none&apos;),
+        (1,0,&apos;none&apos;)
+    })
+    def test_para_zero1_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+
+unit\test_para.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 1, b = 0
+
+    def div(a, b):
+        #todo:健壮性、异常处理
+&gt;       return a/b
+E       ZeroDivisionError: division by zero
+
+unit\div.py:4: ZeroDivisionError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="40" name="test_para_str_param[a-b-Error]" time="0.003"><failure message="TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;str&apos;">num1 = &apos;a&apos;, num2 = &apos;b&apos;, expect = &apos;Error&apos;
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (10, &apos;a&apos;, &apos;Error&apos;),
+        (&apos;a&apos;, &apos;b&apos;, &apos;Error&apos;)
+    })
+    def test_para_str_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+
+unit\test_para.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = &apos;a&apos;, b = &apos;b&apos;
+
+    def div(a, b):
+        #todo:健壮性、异常处理
+&gt;       return a/b
+E       TypeError: unsupported operand type(s) for /: &apos;str&apos; and &apos;str&apos;
+
+unit\div.py:4: TypeError</failure></testcase><testcase classname="unit.test_para" file="unit\test_para.py" line="40" name="test_para_str_param[10-a-Error]" time="0.008"><failure message="TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;">num1 = 10, num2 = &apos;a&apos;, expect = &apos;Error&apos;
+
+    @pytest.mark.parametrize(&quot;num1,num2,expect&quot;, {
+        (10, &apos;a&apos;, &apos;Error&apos;),
+        (&apos;a&apos;, &apos;b&apos;, &apos;Error&apos;)
+    })
+    def test_para_str_param(num1, num2, expect):
+&gt;       assert div(num1, num2) == expect
+
+unit\test_para.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = 10, b = &apos;a&apos;
+
+    def div(a, b):
+        #todo:健壮性、异常处理
+&gt;       return a/b
+E       TypeError: unsupported operand type(s) for /: &apos;int&apos; and &apos;str&apos;
+
+unit\div.py:4: TypeError</failure></testcase></testsuite></testsuites>
