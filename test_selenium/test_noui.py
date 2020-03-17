@@ -25,7 +25,6 @@ class TestNoui():
             #使用已经存在的chrome进程
             #options.debugger_address="127.0.0.1:9222"
             self.driver = webdriver.Chrome(options=options)
-
             # chrome无ui的写法
 
     def wait(self, timeout, method):
