@@ -22,7 +22,7 @@ class TestNoui():
             options.add_argument("--headless")
             options.add_argument("--disable-gpu")
             options.add_argument("--window-size=1280,1696")
-            #使用已经存在的chrome进程
+            #使用已经存在的chrome进程，复用浏览器当前页面
             #options.debugger_address="127.0.0.1:9222"
             self.driver = webdriver.Chrome(options=options)
             # chrome无ui的写法
